@@ -93,8 +93,8 @@ class Layout_View
 			?>
 		</head>
 		<body>
-			<!-- The Main Wrapper -->
-			<div class="page">
+			<!-- Page-->
+			<div class="page text-center">
 			<?php 
 			switch ($section) {
 				case 'mainSection':
@@ -248,78 +248,118 @@ class Layout_View
 	{
 		ob_start();
 		?>
-		<!--========================================================
-                              HEADER
-	    =========================================================-->
-	    <header>
-	        <!-- RD Navbar -->
-	        <div class="rd-navbar-wrap">
-	            <nav class="rd-navbar" data-rd-navbar-lg="rd-navbar-static">
-	                <div class="rd-navbar-inner">
-	                    <!-- RD Navbar Panel -->
-	                    <div class="rd-navbar-panel">
-	                        <!-- RD Navbar Toggle -->
-	                        <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar"><span></span></button>
-	                        <!-- END RD Navbar Toggle -->
-	                        <!-- RD Navbar Brand -->
-	                        <div class="rd-navbar-brand">
-	                            <a href="/" class=" text-white text-ubold" alt="<?php echo $this->data['appInfo']['siteName']; ?>">
-	                                <span class="brand-name">Where to Go Sports</span>
-	                            </a>
-	                        </div>
-	                        <!-- END RD Navbar Brand -->
-	                    </div>
-	                    <!-- END RD Navbar Panel -->
-	                    <div class="rd-navbar-nav-wrap">
-	                    	<?php echo self::getTopMenu(); ?>
-	                    </div>
-	                </div>
-	            </nav>
-	        </div>
-	        <!-- END RD Navbar -->
-	        <section>
-	            <!-- Swiper -->
-	            <div class="swiper-container swiper-slider" data-height="53.75609756097561%" data-min-height="100px" data-autoplay="false" data-loop="false">
-	                <div class="swiper-wrapper text-center">
-	                	<?php echo self::getSwipes(); ?>
-	                </div>
-	                <ul class="inline-list text-center">
-	                    <li>
-	                        <a class="icon-xs fa-twitter" target="_blank" href="http://twitter.com/<?php echo $this->data['appInfo']['twitter']; ?>"></a>
-	                    </li>
-	                    <li>
-	                        <a class="icon-xs fa-facebook-square" target="_blank" href="http://www.facebook.com/<?php echo $this->data['appInfo']['facebook']; ?>"></a>
-	                    </li>
-	                    <li>
-	                        <a class="icon-xs fa-youtube" target="_blank" href="http://www.youtube.com/user/<?php echo $this->data['appInfo']['youtube']; ?>"></a>
-	                    </li>
-	                    <li>
-	                        <a class="icon-xs fa-instagram" target="_blank" href="http://instagram.com/<?php echo $this->data['appInfo']['instagram']; ?>"></a>
-	                    </li>
-	                </ul>
-	                <!-- Slider Pagination -->
-	                <div class="carousel-counter-container">
-	                    <div class="current-counter"></div>
-	                    <div class="count">/</div>
-	                    <div class="carousel-count"></div>
-	                </div>
-	                <!-- Slider Navigation -->
-	                <div class="swiper-button-prev"></div>
-	                <div class="swiper-button-next"></div>
-	            </div>
-	            <!-- END Swiper -->
-	        </section>
-	    </header>
-		
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-		
+		<!-- Page Header-->
+        <header class="page-header">
+            <!-- RD Navbar-->
+			<div class="rd-navbar-wrap">
+				<nav data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-md-stick-up-offset="46px" data-lg-stick-up-offset="46px" class="rd-navbar rd-navbar-classic">
+					<div class="rd-navbar-top-panel-wrap">
+						<div class="rd-navbar-top-panel">
+							<div class="left-side">
+								<!-- Contact Info-->
+								<address class="contact-info text-left">
+									<div class="reveal-inline-block">
+										<a href="/" class="unit unit-lg-middle unit-horizontal unit-spacing-xxs">
+											<span class="unit-left">
+												<span class="icon icon-sm icon-primary icon-circle fa fa-flag text-bermuda"></span>
+											</span>
+											<span class="unit-body">		
+												<span class="text-gray-lighter">English</span>
+											</span>
+										</a>
+									</div>
+									<div class="reveal-inline-block">
+										<a href="/" class="unit unit-lg-middle unit-horizontal unit-spacing-xxs">
+											<span class="unit-left">
+												<span class="icon icon-sm icon-primary icon-circle mdi mdi-map text-bermuda"></span>
+											</span>
+											<span class="unit-body">		
+												<span class="text-gray-lighter">Mapa</span>
+											</span>
+										</a>
+									</div>
+									<div class="reveal-inline-block">
+										<a href="callto:984 100 7534" class="unit unit-middle unit-horizontal unit-spacing-xxs">
+											<span class="unit-left">
+												<span class="icon icon-sm icon-primary icon-circle mdi mdi-phone text-bermuda"></span>
+											</span>
+											<span class="unit-body">
+												<span class="text-gray-lighter">984 100 7534</span>
+											</span>
+										</a>
+									</div>
+								</address>
+							</div>
+							<div class="right-side">
+								<ul class="list-inline list-inline-2 list-primary">
+									<li>
+										<a href="https://www.facebook.com/<?php echo $this->data['appInfo']['facebook']; ?>/" target="_blank" class="icon icon-xs icon-circle fa fa-facebook text-gray-lighter"></a>
+									</li>
+									<li>
+										<a href="https://twitter.com/<?php echo $this->data['appInfo']['twitter']; ?>" target="_blank" class="icon icon-xs icon-circle fa fa-twitter text-gray-lighter"></a>
+									</li>
+									<li>
+										<a href="https://www.instagram.com/<?php echo $this->data['appInfo']['instagram']; ?>/" target="_blank" class="icon icon-xs icon-circle fa fa-instagram text-gray-lighter"></a>
+									</li>
+									<li>
+										<a href="https://www.youtube.com/user/<?php echo $this->data['appInfo']['youtube']; ?>/" target="_blank" class="icon icon-xs icon-circle fa fa-youtube text-gray-lighter"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="rd-navbar-inner">
+						<!-- RD Navbar Panel-->
+						<div class="rd-navbar-left-side">
+							<div class="rd-navbar-panel">
+								<!-- RD Navbar Toggle-->
+								<button data-rd-navbar-toggle=".rd-navbar-nav-wrap" class="rd-navbar-toggle">
+									<span></span>
+								</button>
+								<!-- RD Navbar Brand-->
+								<div class="rd-navbar-brand">
+									<a href="/" class="brand-name">
+									<img src="/images/logo.png" width="202" height="56" alt="<?php echo $this->data['appInfo']['siteName']; ?>" class="img-responsive center-block"></a>
+								</div>
+								<!-- RD Navbar Toggle-->
+								<button data-rd-navbar-toggle=".rd-navbar-search-wrap-fixed" class="rd-navbar-toggle-search-fixed veil-md reveal-tablet"></button>
+								<!-- RD Navbar Toggle-->
+								<button data-rd-navbar-toggle=".rd-navbar-top-panel" class="rd-navbar-collapse-toggle veil-lg reveal-md-inline-block">
+									<span></span>
+								</button>
+							</div>
+						</div>
+						<div class="rd-navbar-right-side">
+							<div class="rd-navbar-nav-wrap reveal-inline-block">
+								<?php echo self::getTopMenu(); ?>
+							</div>
+							<!--RD Navbar Search-->
+							<div class="rd-navbar-search-wrap-fixed reveal-inline-block">
+								<div class="rd-navbar-search-wrap">
+									<div class="rd-navbar-search">
+										<a data-rd-navbar-toggle=".rd-navbar-search" href="index.html#" class="rd-navbar-search-toggle">
+											<span></span>
+										</a>
+										<form action="search-results.html" data-search-live="rd-search-results-live" method="GET" class="rd-search rd-navbar-search-custom">
+											<div class="form-group">
+												<label for="rd-navbar-search-form-input" class="form-label">Search</label>
+												<input id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off" class="rd-navbar-search-form-input form-control form-control-gray-lightest">
+												<button type="submit">
+													<span class="icon icon-xs fa fa-search"></span>
+												</button>
+											</div>
+											<div id="rd-search-results-live" class="rd-search-results-live veil reveal-lg-block"></div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<!-- RD Navbar Toggle-->
+							<button data-rd-navbar-toggle=".rd-navbar-search-wrap" class="rd-navbar-toggle-search veil reveal-md-inline-block veil-tablet"></button>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
 		<?php
 		$header = ob_get_contents();
 		ob_end_clean();
@@ -387,47 +427,30 @@ class Layout_View
 	{
 		ob_start();
 		?>
-		<!-- RD Navbar Nav -->
+		<!-- RD Navbar Nav-->
 		<ul class="rd-navbar-nav">
-			<?php
-			foreach ($this->data['categories'] as $category)
-			{
-			?>
-			<li>
-				<a href="/<?php echo Tools::slugify($category['category_id']); ?>/<?php echo Tools::slugify($category['name']); ?>/"><?php echo $category['name']; ?></a>
-				<?php 
-				if ($category[0]['subcategories'])
-				{
-					?>
-				<!-- RD Navbar Dropdown -->
+			<li class="active"><a href="/">Inicio</a></li>
+			<li><a href="entertainment.html">¿D&oacute;nde ir?</a>
+				<!-- RD Navbar Dropdown-->
 				<ul class="rd-navbar-dropdown">
 					<?php
-					foreach ($category[0]['subcategories'] as $subcategory)
+					foreach ($this->data['categories'] as $category)
 					{
-						?>
+					?>
 					<li>
-						<a href="/<?php echo Tools::slugify($category['category_id']); ?>/<?php echo Tools::slugify($category['name']); ?>/<?php echo $subcategory['subcategory_id']; ?>/<?php echo Tools::slugify($subcategory['name']); ?>/"><?php echo $subcategory['name']; ?></a>
+						<a href="/<?php echo Tools::slugify($category['category_id']); ?>/<?php echo Tools::slugify($category['name']); ?>/"><?php echo $category['name']; ?></a>
 					</li>
-						<?php
+					<?php
 					}
 					?>
 				</ul>
-				<!-- END RD Navbar Dropdown -->
-					<?php
-				}
-				?>
 			</li>
-			<?php
-			}
-			?>
-			<li>
-				<a href="/map/">Mapa</a>
-			</li>
-			<li>
-				<a href="http://www.wheretogo.com.mx">English</a>
-			</li>
+			<li><a href="/eventos/">Eventos</a></li>
+			<li><a href="/blog/">Blog</a></li>
+			<li><a href="/mapa/">Mapa</a></li>
+			<li><a href="/contacto/">Contacto</a></li>
 		</ul>
-			<!-- END RD Navbar Nav -->
+		<!-- END RD Navbar Nav -->
 		<?php
 		$topBar = ob_get_contents();
 		ob_end_clean();
@@ -578,6 +601,62 @@ class Layout_View
     	ob_start();
     	echo self :: getIndexHeader();
     	?>
+    	<div class="swiper-container-wrap">
+            <!-- Swiper-->
+            <div data-height="" data-min-height="300px" data-simulate-touch="false" data-autoplay="false" class="swiper-container swiper-slider">
+                <div class="swiper-wrapper">
+					<?php 
+					echo self::getSwipes();
+					?>
+                </div>
+                <div class="shell-wide shell-wide-custom">
+                    <div class="inset-lg-left-45 inset-xl-left-85">
+                        <!-- Swiper Pagination-->
+                        <div class="swiper-pagination swiper-pagination-bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-aside-right">
+                <!-- List-->
+                <ul class="list list-background-minsk list-0 text-center section-xs-top-60 section-sm-top-0">
+					<li class="inset-xs-left-85 inset-xs-right-85 inset-sm-left-0 inset-sm-right-0">
+                        <a href="atracciones-tours.html" class="box-sm bg-primary reveal-block">
+                            <span class="fa fa-hand-peace-o custom-icon reveal-inline-block"></span>
+                            <span class="text-bold text-white reveal-block">Atracciones</span>
+                        </a>
+                    </li>
+                    <li class="inset-xs-left-85 inset-xs-right-85 inset-sm-left-0 inset-sm-right-0 offset-xs-top-30 offset-sm-top-0">
+                        <a href="food.html" class="box-sm bg-primary reveal-block">
+                            <span class="fa fa-coffee custom-icon reveal-inline-block"></span>
+                            <span class="text-bold text-white reveal-block">Comida</span>
+                        </a>
+                    </li>
+					<li class="inset-xs-left-85 inset-xs-right-85 inset-sm-left-0 inset-sm-right-0 offset-xs-top-30 offset-sm-top-0">
+                        <a href="entertainment.html" class="box-sm bg-primary reveal-block">
+                            <span class="fa fa-building-o custom-icon reveal-inline-block"></span>
+                            <span class="text-bold text-white reveal-block">Hospedaje</span>
+                        </a>
+                    </li>
+                    <li class="inset-xs-left-85 inset-xs-right-85 inset-sm-left-0 inset-sm-right-0 offset-xs-top-30 offset-sm-top-0">
+                        <a href="parking.html" class="box-sm bg-primary reveal-block">
+                            <span class="fa fa-university custom-icon reveal-inline-block"></span>
+                            <span class="text-bold text-white reveal-block">Lugares P&uacute;blicos</span></a>
+                    </li>
+                    <li class="inset-xs-left-85 inset-xs-right-85 inset-sm-left-0 inset-sm-right-0 offset-xs-top-30 offset-sm-top-0">
+                        <a href="parking.html" class="box-sm bg-primary reveal-block">
+                            <span class="fa fa-ambulance custom-icon reveal-inline-block"></span>
+                            <span class="text-bold text-white reveal-block">Servicios</span></a>
+                    </li>
+                    <li class="inset-xs-left-85 inset-xs-right-85 inset-sm-left-0 inset-sm-right-0 offset-xs-top-30 offset-sm-top-0">
+                        <a href="shops.html" class="box-sm bg-primary reveal-block">
+                            <span class="fa fa-shopping-bag custom-icon reveal-inline-block"></span>
+                            <span class="text-bold text-white reveal-block">Tiendas</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    	
     	<!--========================================================
                               CONTENT
 	    =========================================================-->
@@ -747,24 +826,35 @@ class Layout_View
 				if ($a['link'])
 				$link = $a['link'];
 				?>
-				<div class="swiper-slide" data-slide-bg="/img-up/main-gallery/front/<?php echo $a['name']; ?>" alt="<?php echo $a['title']; ?>">
-                    <div class="swiper-slide-caption">
-                        <div class="container">
-                            <p>
-                                <?php echo $a['promos']; ?>
-                            </p>
-                            <?php 
-                            if ($a['link'])
-                            {
-                            	?>
-                            <a class="btn btn-md btn-primary" href="<?php echo $a['link']; ?>">Leer m&aacute;s</a>
-                            	<?php
-                            }
-                            ?>
-                            
-                        </div>
-                    </div>
-                </div>
+				<div data-slide-bg="<?php echo $this->data['appInfo']['url']; ?>/media/sliders/front/<?php echo $a['name']; ?>" class="swiper-slide">
+					<div class="swiper-slide-caption">
+						<div class="inset-lg-left-35 inset-xl-left-125">
+							<div class="shell-wide shell-wide-custom">
+								<div class="range range-xs-center range-lg-left text-lg-left">
+									<div class="cell-sm-10 cell-lg-7">
+										<div class="reveal-inline-block text-top inset-left-10">
+                                        	<h1><?php echo $a['title']; ?></h1>
+                                        </div>
+										<div class="reveal-inline-block text-top offset-top-10 offset-sm-top-15 inset-left-10">
+											<h4 class="text-white"><?php echo $a['promos']; ?></h4>
+										</div>
+										
+										<div class="offset-top-20">
+											<?php 
+				                            if ($a['link'])
+				                            {
+				                            	?>
+											<a href="<?php echo $a['link']; ?>" class="btn btn-width-165 btn-bermuda">Leer m&aacute;s</a>
+												<?php 
+				                            }
+											?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<?php 
 			}
 		}
