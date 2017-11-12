@@ -657,31 +657,31 @@ class Layout_View
             </div>
         </div>
     	
-    	<!--========================================================
-                              CONTENT
-	    =========================================================-->
-	    <main class="page-content">
+    	<!-- Page Content-->
+        <main class="page-content">
+        
+        	<!-- Items promoted -->
+            <section class="section-80">
+                <!-- List Inline-->
+                <div class="range range-condensed range-xs-middle range-xs-center range-md-justify list-inline-dashed-lg">
+                	<?php echo self :: getItemsPromoted(); ?>
+                </div>
+			</section>
 	        
-			<!-- What we do -->
+			<!-- What we do 
 	        <section class="well-xl-4 hr text-center text-sm-left">
 	            <div class="container">
 	                <h3 class="text-line-2 text-default-3">Pr&oacute;ximos eventos</h3>
 	                <div class="row offset-4">
 	                	<?php 
-	                		echo self::getIndexEvents();
+	                		//echo self::getIndexEvents();
 	                	?>
 	                </div>
 	            </div>
-	        </section> 
+	        </section> -->
 	        <!-- END What we do -->
 	        
-	        <!-- Index list -->
-	        <section class="text-center">
-	            <ul class="row row-no-gutter index-list">
-	                <?php echo self :: getItemsPromoted(); ?>
-				</ul>
-			</section>
-			<!-- END Index list -->
+	        
 	        
 	        <!-- About us -->
 	        <section class="well-xl">
@@ -695,28 +695,28 @@ class Layout_View
 	        <!-- END About us -->
                                                               
 
-	        <!-- Clients choose us! -->
+	        <!-- Clients choose us! 
 	        <section class="well-xl-3 hr text-center text-sm-left">
 	            <div class="container">
 	                <div class="row">
 	                    <div class="col-md-4 wow fadeInLeft">
 	                        <h3 class="text-line-2 text-default-3">Facebook</h3>
-	                        <?php echo self :: getFacebookIndex(); ?>
+	                        <?php //echo self :: getFacebookIndex(); ?>
 	                    </div>
 	                    <div class="col-md-4 wow fadeInLeft">
 	                        <h3 class="text-line-2 text-default-3">Twitter</h3>
-	                        <?php echo self :: getTwitterIndex(); ?>
+	                        <?php //echo self :: getTwitterIndex(); ?>
 	                    </div>
 	                    <div class="col-md-4 wow fadeInLeft">
 	                        <h3 class="text-line-2 text-default-3">Videos</h3>
 	                        <div class="row">
-	                        	<?php echo  self :: getVideosIndex(); ?>
+	                        	<?php //echo  self :: getVideosIndex(); ?>
 	                        </div>
 	                        <a class="btn btn-xs btn-primary-1" href="/videos/">Ver todos<span class="material-icons-chevron_right"></span></a>
 	                    </div>
 	                </div>
 	            </div>
-	        </section>
+	        </section>-->
 	        <!-- END Clients choose us! -->
 	        <!-- Contact us -->
 	        <section class="well-xl-6">
@@ -1002,12 +1002,11 @@ class Layout_View
     	foreach ($this->data['mainPromoted'] as $company)
     	{
     	?>
-    		<li class="col-md-3 col-sm-3">
-    			<h3><?php echo $company['category_name']; ?></h3>
-				<a href="/company/<?php echo $company['category_id']; ?>/<?php echo Tools::slugify($company['category_name']); ?>/<?php echo $company['company_id']; ?>/<?php echo Tools::slugify($company['name']); ?>/"
-    			        class="image-item">
-    	        	<div class="img-box">
-            		<?php
+		
+			<div class="cell-xs-5 cell-md-4 cell-lg-2 offset-top-60 offset-lg-top-0">
+				<a href="/company/<?php echo $company['category_id']; ?>/<?php echo Tools::slugify($company['category_name']); ?>/<?php echo $company['company_id']; ?>/<?php echo Tools::slugify($company['name']); ?>/" class="reveal-inline-block">
+					<!-- <p><?php echo $company['name']; ?></p> -->
+					<?php
             			if (!$company['logo'])
             			{
             			?>
@@ -1019,20 +1018,12 @@ class Layout_View
             			else
             			{
             			?>
-            			<img src="img-up/companies_pictures/logo/<?php echo $company['logo']; ?>" 
-            			    alt="<?php echo $company['name']; ?>"
-    			        />
+    			        <img src="<?php echo $this->data['appInfo']['url']; ?>/media/companies/logo/<?php echo $company['logo']; ?>" width="180" height="69" alt="<?php echo $company['name']; ?>" class="img-responsive center-block img-semi-transparent">
             			<?php
             			}
             		?>
-    				</div>        	
-    			</a>
-				<h4><?php echo $company['name']; ?></h4>
-				<p>
-					<?php echo $company['description']; ?>
-				</p>
-				<a class="btn btn-xs btn-primary-1" href="/company/<?php echo $company['category_id']; ?>/<?php echo Tools::slugify($company['category_name']); ?>/<?php echo $company['company_id']; ?>/<?php echo Tools::slugify($company['name']); ?>/">Leer m&aacute;s <span class="material-icons-chevron_right"></span></a>
-			</li>
+				</a>
+			</div>
     	<?php
     	}
     	$items = ob_get_contents();

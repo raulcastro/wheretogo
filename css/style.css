@@ -24496,7 +24496,7 @@ hr {
 }
 
 .img-semi-transparent {
-  opacity: .5;
+  opacity: .8;
   transition: .3s all ease;
   will-change: transform;
 }
