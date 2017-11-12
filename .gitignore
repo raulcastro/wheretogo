@@ -1,0 +1,33 @@
+# Sensitive files & folders
+databases/
+deploy/
+Framework/Connection_Data.php
+media/
+
+# Useless folders
+img-up/
+
+# OS generated files #
+######################
+*/.DS_Store
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Eclipse
+.buildpath
+.project
+.settings
+
+# Build and Release Folders
+bin/
+bin-debug/
+bin-release/
+
+# Other files and folders
+.settings/
