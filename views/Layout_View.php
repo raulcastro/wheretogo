@@ -667,6 +667,57 @@ class Layout_View
                 	<?php echo self :: getItemsPromoted(); ?>
                 </div>
 			</section>
+			
+			<!-- A Few Words About Audrey Mall-->
+            <section class="section-90 section-md-120 bg-selago">
+                <div class="inset-md-left-35 inset-xl-left-125 inset-md-right-35 inset-xl-right-125">
+                    <div class="shell-wide shell-wide-custom">
+                        <div class="range range-xs-center range-xs-middle range-xl-justify">
+                            <div class="cell-sm-10 cell-lg-5 cell-xl-4 text-left">
+                                <hr class="divider hr-md-left-0 bg-bermuda">
+                                <div class="offset-top-20">
+                                    <h3 class="text-center text-md-left"><?php echo $this->data['appInfo']['siteName']; ?></h3>
+                                    <div class="offset-top-30">
+                                        <p><?php echo $this->data['appInfo']['description']; ?></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="cell-sm-10 cell-lg-7 cell-xl-8 offset-top-60 offset-lg-top-0">
+                                <div class="range range-xs-center range-sm-left range-md-center inset-xl-left-70">
+                                    <div class="cell-sm-6 cell-md-4 offset-top-60 offset-sm-top-0">
+                                        <span class="icon icon-lg icon-circle icon-white shadow-drop mdi mdi-music-note text-primary"></span>
+                                        <div class="offset-top-25 offset-md-top-35 inset-xl-left-15 inset-xl-right-15">
+                                            <h6>Events</h6>
+                                            <hr class="divider divider-xs bg-bermuda offset-top-15">
+                                            <p class="offset-top-15 offset-md-top-25">
+                                            	<a class="muted-link"> Diviertete en los más bellos paruqes tematicos, disfruta de las maravillas de la Riviera Maya con inumerables tours.</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="cell-sm-6 cell-md-4">
+                                        <span class="icon icon-lg icon-circle icon-white shadow-drop mdi mdi-comment text-primary"></span>
+                                        <div class="offset-top-25 offset-md-top-35 inset-xl-left-15 inset-xl-right-15">
+                                            <h6>Blog</h6>
+                                            <hr class="divider divider-xs bg-bermuda offset-top-15">
+                                            <p class="offset-top-15 offset-md-top-25"><a class="muted-link">Disfruta de la amplia varideda gastronómica en Playa del Carmen</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="cell-sm-6 cell-md-4 offset-top-60 offset-sm-top-0">
+                                        <span class="icon icon-lg icon-circle icon-white shadow-drop mdi mdi-email text-primary"></span>
+                                        <div class="offset-top-25 offset-md-top-35 inset-xl-left-15 inset-xl-right-15">
+                                            <h6>Contacto</h6>
+                                            <hr class="divider divider-xs bg-bermuda offset-top-15">
+                                            <p class="offset-top-15 offset-md-top-25"><a class="muted-link">Diviertete en los más bellos paruqes tematicos, disfruta de las maravillas de la Riviera Maya con inumerables tours.</a></p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 	        
 			<!-- What we do 
 	        <section class="well-xl-4 hr text-center text-sm-left">
@@ -680,20 +731,6 @@ class Layout_View
 	            </div>
 	        </section> -->
 	        <!-- END What we do -->
-	        
-	        
-	        
-	        <!-- About us -->
-	        <section class="well-xl">
-	            <div class="container text-center">
-	                <h2 class="text-line"><?php echo $this->data['appInfo']['siteName']; ?></h2>
-	                <p class="$default-7 font-size-1 offset-1">
-	                    <?php echo $this->data['appInfo']['description']; ?>
-	                </p>
-	            </div>
-	        </section>
-	        <!-- END About us -->
-                                                              
 
 	        <!-- Clients choose us! 
 	        <section class="well-xl-3 hr text-center text-sm-left">

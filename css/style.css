@@ -37005,3 +37005,11 @@ a.pswp__share--download:hover {
 .widget-flickrfeed .flickr-item {
   max-width: 82px;
 }
+
+.muted-link {
+	color: #7d7d7d;
+}
+
+.muted-link:hover {
+	text-decoration: none;
+}
