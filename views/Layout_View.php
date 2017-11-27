@@ -334,6 +334,7 @@ class Layout_View
 								<?php echo self::getTopMenu(); ?>
 							</div>
 							<!--RD Navbar Search-->
+							<!-- 
 							<div class="rd-navbar-search-wrap-fixed reveal-inline-block">
 								<div class="rd-navbar-search-wrap">
 									<div class="rd-navbar-search">
@@ -352,9 +353,9 @@ class Layout_View
 										</form>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<!-- RD Navbar Toggle-->
-							<button data-rd-navbar-toggle=".rd-navbar-search-wrap" class="rd-navbar-toggle-search veil reveal-md-inline-block veil-tablet"></button>
+							<!--<button data-rd-navbar-toggle=".rd-navbar-search-wrap" class="rd-navbar-toggle-search veil reveal-md-inline-block veil-tablet"></button>-->
 						</div>
 					</div>
 				</nav>
