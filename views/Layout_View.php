@@ -657,7 +657,7 @@ class Layout_View
     	?>
     	<div class="swiper-container-wrap">
             <!-- Swiper-->
-            <div data-height="" data-min-height="300px" data-simulate-touch="false" data-autoplay="false" class="swiper-container swiper-slider">
+            <div data-height="" data-min-height="300px" data-simulate-touch="false" data-autoplay="5000"  class="swiper-container swiper-slider">
                 <div class="swiper-wrapper">
 					<?php 
 					echo self::getSwipes();
