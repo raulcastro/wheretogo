@@ -20892,7 +20892,7 @@ fieldset[disabled] .page .btn-google-plus {
     display: block;
   }
   .thumbnail-terry-title {
-    font-size: 31px;
+    font-size: 22px;
   }
   .thumbnail-terry img {
     border-radius: 0;
@@ -31712,7 +31712,7 @@ html:not(.lt-ie10) .not-animated {
   text-align: left;
   margin-top: 14px;
   left: 0;
-  width: 200px;
+  width: 240px;
   background: #fff;
   z-index: 5;
 }

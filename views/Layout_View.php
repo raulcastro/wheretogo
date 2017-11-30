@@ -470,62 +470,52 @@ class Layout_View
 	{
 		ob_start();
 		?>
-		<!--========================================================
-                              FOOTER
-	    ==========================================================-->
-	    <footer class="page-footer text-center text-md-left">
-	        <div class="container">
-	            <ul class="row index-list-1">
-	                <li class="col-md-3 col-sm-6">
-	                    <strong><?php echo $this->data['appInfo']['siteName']; ?></strong>
-							<ul>
-								<?php echo self :: getCategoriesFooter(); ?>
-							</ul>
-	                </li>
-	                <li class="col-md-3 col-sm-6 offset-8">
-	                    <strong>Our Other Locations</strong>
-							<ul>
-							    <?php echo self :: getLocationsFooter(); ?>
-							</ul>
-	                </li>
-	                
-	                <li class="col-md-3 col-sm-6 offset-2">
-	                    <ul class="inline-list offset-12 social-footer">
-                            <li>
-                                <a class="icon-xs fa-twitter" href="http://twitter.com/<?php echo $this->data['appInfo']['twitter']; ?>" target="_blank"></a>
-                            </li>
-                            <li>
-                                <a class="icon-xs fa-facebook-square" href="http://www.facebook.com/<?php echo $this->data['appInfo']['facebook']; ?>" target="_blank"></a>
-                            </li>
-                            <li>
-                                <a class="icon-xs fa-youtube" href="http://www.youtube.com/user/<?php echo $this->data['appInfo']['youtube']; ?>" target="_blank"></a>
-                            </li>
-                            <li>
-                                <a class="icon-xs fa-instagram" href="http://instagram.com/<?php echo $this->data['appInfo']['instagram']; ?>" target="_blank"></a>
-                            </li>
+		<!-- Page Footer-->
+        <footer class="page-footer bg-shark section-80 section-lg-top-120 section-lg-bottom-60">
+            <div class="shell-wide">
+                <div class="range range-xs-center inset-xl-left-75">
+                    <div class="cell-xs-6 cell-sm-5 cell-lg-2 cell-xl-2 text-xl-right cell-lg-push-2">
+                        <!-- List Marked-->
+                        <ul class="list list-marked list-marked-white text-left inset-xl-left-75">
+                        	<?php echo self :: getCategoriesFooter(); ?>
                         </ul>
-	                </li>
-	                
-	                <li class="col-md-3 col-sm-6 offset-2">
-	                    <address class="contact-info">
-	                        <dl>
-	                            <dt class="display"></dt>
-	                            <dd class="display">
-	                                E-Mail: <a href="callto:info@wheretogo.com.mx"> info@wheretogo.com.mx</a>
-	                            </dd>
-	                        </dl>
-	                    </address>
-	                </li>
-	            </ul>
-	            <div class="copyright">
-	                <div>
-	                <?php echo $this->data['appInfo']['siteName']; ?> &#169; <span id="copyright-year"></span> •
-	                <a href='/'>Privacy Policy</a>
-	                <!-- {%FOOTER_LINK} -->
-	                </div>
-	            </div>
-	        </div>
-	    </footer>
+                    </div>
+                    <div class="cell-xs-6 cell-sm-5 cell-lg-2 cell-xl-2 text-xl-right offset-top-40 offset-xs-top-0 cell-lg-push-3">
+                        <!-- List Marked-->
+                        <ul class="list list-marked list-marked-white text-left inset-xl-left-100">
+                            <?php echo self :: getLocationsFooter(); ?>
+                        </ul>
+                    </div>
+                    
+                    <div class="cell-xs-8 cell-sm-5 cell-lg-4 cell-xl-4 text-xl-center offset-top-40 offset-lg-top-0 cell-lg-push-1">
+                        <p class="text-gray-lighter text-left inset-xl-right-140">Somos un medio digital con presencia en 
+                            la Riviera Maya gracias a difusión y cobertura de eventos, así como por la creación de contenidos 
+                            propios en materias audiovisual y textual en rubros como espectáculos, deportes, cultura, sociales 
+                            y turismo.
+                            <br>
+                            Contamos con un grupo de personas calificadas en cada área que conforman un equipo especializado 
+                            en comunicación y entretenimiento
+                        </p>
+                    </div>
+                </div>
+                <div class="range range-xs-center inset-xl-left-75 range-xs-middle range-xl-justify offset-xl-top-75">
+                    <div class="cell-sm-3 cell-md-5 cell-lg-5 cell-xl-4 text-xl-center text-sm-left">
+                        <a href="index.html" class="reveal-inline-block">
+                            <img src="/images/logo-primary.png" width="202" height="56" alt="Where To Go Playa " class="img-responsive center-block">
+                        </a>
+                    </div>
+                    <div class="cell-sm-7 cell-md-5 cell-lg-5 text-xl-center offset-top-40 offset-sm-top-0">
+                        <p class="text-small inset-xl-right-175">&#169; 
+                            <span id="copyright-year">
+                            </span> <?php echo $this->data['appInfo']['siteName']; ?>
+                            <br>
+                            <a href="callto:info@wheretogo.com.mx" class="text-bermuda"> info@wheretogo.com.mx</a>
+                        </p>
+                        <!-- {%FOOTER_LINK}-->
+                    </div>
+                </div>
+            </div>
+        </footer>
         <?php
         $footer = ob_get_contents();
         ob_end_clean();
@@ -548,8 +538,8 @@ class Layout_View
     		{
     			?>
     		<li>
-    		    <a href="/<?php echo $category['category_id']; ?>/<?php echo Tools::slugify($category['name']); ?>/">
-    		        &raquo; <?php echo $category['name']; ?>
+    		    <a href="/<?php echo $category['category_id']; ?>/<?php echo Tools::slugify($category['name']); ?>/" class="text-bermuda">
+    		        <?php echo $category['name']; ?>
     		    </a>
     		    <div class="clear"></div>
     		</li>
@@ -577,8 +567,8 @@ class Layout_View
     		{
     			?>
     			<li>
-    			    <a href="/location/<?php echo $location['location_id']; ?>/<?php echo Tools::slugify($location['name']); ?>/">
-    					&raquo; <?php echo $location['name']; ?>
+    			    <a href="/location/<?php echo $location['location_id']; ?>/<?php echo Tools::slugify($location['name']); ?>/" class="text-bermuda">
+    					<?php echo $location['name']; ?>
     				</a>
     				<div class="clr"></div>
     			</li>
@@ -588,6 +578,69 @@ class Layout_View
         $locations_footer = ob_get_contents();
         ob_end_clean();
         return $locations_footer;
+    }
+    
+    public function getIndexMap()
+    {
+    	ob_start();
+    	?>
+    	<!-- Contact Information-->
+            <section>
+                <div class="rd-google-map-wrap">
+                    <div class="section-60 section-md-0 inset-left-15 inset-right-15 inset-md-left-0 inset-md-right-0">
+                        <!-- Box-->
+                        <div class="box-lg box-contacts bg-white text-left center-block shadow-drop">
+                            <hr class="divider hr-left-0 bg-bermuda">
+                            <div class="offset-top-15">
+                                <h5>Contacto</h5>
+                                <!-- Contact Info-->
+                                <address class="contact-info offset-top-35 p">
+				                    <!-- Unit-->
+				                    <div class="unit unit-horizontal unit-spacing-xs">
+				                      <div class="unit-left">
+				                          <span class="icon icon-normal icon-sm icon-sm-variant-2 mdi mdi-map-marker text-primary"></span></div>
+				                      <div class="unit-body"><a href="contacts.html" class="text-dove-gray">Playa del Carmen Quintana Roo, México.</a></div>
+				                    </div>
+				                    <!-- Unit-->
+				                    <div class="unit unit-horizontal unit-spacing-xs offset-top-20">
+				                      <div class="unit-left">
+				                          <span class="icon icon-normal icon-sm icon-sm-variant-2 mdi mdi-calendar-clock text-primary"></span></div>
+				                      <div class="unit-body">
+				                        <p class="text-dove-gray"> 9:00am–9:00pm </p>
+				                      </div>
+				                    </div>
+				                    <!-- Unit-->
+				                    <div class="unit unit-horizontal unit-spacing-xs offset-top-20">
+				                      <div class="unit-left">
+				                        <div class="icon icon-normal icon-sm icon-sm-variant-2 mdi mdi-phone text-primary"></div>
+				                      </div>
+				                      <div class="unit-body"><a href="callto:984 100 7533" class="text-dove-gray">984 100 7533</a></div>
+				                    </div>
+				                    <!-- Unit-->
+				                    <div class="unit unit-horizontal unit-spacing-xs offset-top-20">
+				                      <div class="unit-left">
+				                        <div class="icon icon-normal icon-sm icon-sm-variant-2 mdi mdi-email-outline text-primary"></div>
+				                      </div>
+				                      <div class="unit-body"><a href="mailto:info@wheretogo.com.mx" class="text-dove-gray">info@wheretogo.com.mx</a></div>
+				                    </div>
+				                  </address> 
+                  			</div>
+                        </div>
+                    </div>
+                    <!-- RD Google Map-->
+                    <div data-zoom="15" data-x="-87.071270" data-y="20.647151" data-styles="[{&quot;featureType&quot;:&quot;landscape.natural&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;color&quot;:&quot;#e0efef&quot;}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;hue&quot;:&quot;#1900ff&quot;},{&quot;color&quot;:&quot;#c0e8e8&quot;}]},{&quot;featureType&quot;:&quot;road&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;lightness&quot;:100},{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;road&quot;,&quot;elementType&quot;:&quot;labels&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;transit.line&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;lightness&quot;:700}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#7dcdcd&quot;}]}]" class="rd-google-map rd-google-map__model">
+                        <ul class="map_locations">
+                            <li data-y="40.643180" data-x="-73.9874068">
+                                <p>Playa Del carmen, Quintana Roo, México</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+    	<?php
+    	$map = ob_get_contents();
+    	ob_clean();
+    	return $map;
     }
     
     /**
@@ -756,56 +809,9 @@ class Layout_View
 	            </div>
 	        </section>-->
 	        <!-- END Clients choose us! -->
-	        <!-- Contact us -->
-	        <section class="well-xl-6">
-	            <div class="container">
-	                <h3 class="text-line-2 text-default-3 text-center text-sm-left">Cont&aacute;ctanos</h3>
-	                <!-- RD Mailform -->
-	                <form class='rd-mailform' method="post" action="/bat/rd-mailform.php">
-	                    <!-- RD Mailform Type -->
-	                    <input type="hidden" name="form-type" value="contact"/>
-	                    <!-- END RD Mailform Type -->
-	                    <fieldset>
-	                        <div class="row">
-	                            <div class="col-md-6">
-	                                <label data-add-placeholder>
-	                                    <input type="text"
-	                                           name="name"
-	                                           placeholder="Nombre"
-	                                           data-constraints="@NotEmpty @LettersOnly"/>
-	                                </label>
-	                            </div>
-	                            <div class="col-md-6">
-	                                <label data-add-placeholder>
-	                                    <input type="text"
-	                                           name="email"
-	                                           placeholder="Email"
-	                                           data-constraints="@NotEmpty @Email"/>
-	                                </label>
-	                            </div>
-	                        </div>
-	                        <div class="row">
-	                            <div class="col-md-9">
-	                                <label data-add-placeholder>
-	                            <textarea name="message" placeholder="Mensaje"
-	                                      data-constraints="@NotEmpty"></textarea>
-	                                </label>
-	                            </div>
-	                            <div class="col-md-3">
-	                                <div class="mfControls">
-	                                    <button class="btn btn-md btn-primary-3" type="submit">Enviar</button>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="mfInfo"></div>
-	                    </fieldset>
-	                </form>
-	                <!-- END RD Mailform -->
-	            </div>
-	        </section>
-	        <!-- END Contact us -->
+	        
 	        <!-- RD Google Map -->
-	        <section>
+	        <!-- <section>
 	            <div class="rd-google-map">
 	                <div id="google-map" class="rd-google-map__model" data-zoom="16" data-x="-87.069887"
 	                     data-y="20.631863"></div>
@@ -836,14 +842,366 @@ class Layout_View
 	                	?>
 	                </ul>
 	            </div>
-	        </section>
+	        </section> -->
 	        <!-- END RD Google Map -->
+	        <?php 
+	        echo self::getMainCategoriesIndex();
+	        echo self::getEventsIndex();
+	        echo self::getBlogIndex();
+	        echo self::getIndexMap();
+	        ?>
 		</main>
     	
 		<?php
 		$wideBody = ob_get_contents();
         ob_end_clean();
 		return $wideBody;
+    }
+    
+    public function getMainCategoriesIndex()
+    {
+    		ob_get_contents();
+    		?>
+    		<section class="section-80 section-md-0 bg-shark">
+                <div class="range range-condensed range-xs-center">
+					<div class="cell-xs-6 cell-sm-6 cell-lg-2 inset-left-15 inset-right-15 inset-md-left-0 inset-md-right-0">
+                        <!-- Thumbnail Terry-->
+                        <figure class="thumbnail-terry thumbnail-terry-modern">
+                            <a href="food.html">
+                                <img width="480" height="360" src="/images/steak-house.jpg" alt="Restaurantes Playa del Carmen">
+                            </a>
+                            <figcaption class="text-left">
+                                <div class="figcaption-caption">
+                                    <h4 class="thumbnail-terry-title text-spacing-40 text-uppercase">Atracciones y Tours</h4>
+                                    <p class="thumbnail-terry-desc text-white-07 offset-top-5">
+                                        Disfruta de una gran gama gastronómica
+                                    </p>
+                                </div>
+                                <div class="thumbnail-terry-btn-wrap text-md-right offset-top-10 offset-md-top-0">
+                                    <a href="food.html" class="btn btn-thumbnail-terry btn-rect btn-icon btn-icon-right btn-primary">
+                                        <span class="icon icon-xs mdi mdi-arrow-right veil reveal-sm-inline-block"></span> Más
+                                    </a>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <div class="cell-xs-6 cell-sm-6 cell-lg-2 inset-left-15 inset-right-15 inset-md-left-0 inset-md-right-0">
+                        <!-- Thumbnail Terry-->
+                        <figure class="thumbnail-terry thumbnail-terry-modern">
+                            <a href="food.html">
+                                <img width="480" height="360" src="/images/steak-house.jpg" alt="Restaurantes Playa del Carmen">
+                            </a>
+                            <figcaption class="text-left">
+                                <div class="figcaption-caption">
+                                    <h4 class="thumbnail-terry-title text-spacing-40 text-uppercase">Comida y Bebida</h4>
+                                    <p class="thumbnail-terry-desc text-white-07 offset-top-5">
+                                        Disfruta de una gran gama gastronómica
+                                    </p>
+                                </div>
+                                <div class="thumbnail-terry-btn-wrap text-md-right offset-top-10 offset-md-top-0">
+                                    <a href="food.html" class="btn btn-thumbnail-terry btn-rect btn-icon btn-icon-right btn-primary">
+                                        <span class="icon icon-xs mdi mdi-arrow-right veil reveal-sm-inline-block"></span> Más
+                                    </a>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+					
+                    <div class="cell-xs-6 cell-sm-6 cell-lg-2 inset-left-15 inset-right-15 inset-md-left-0 inset-md-right-0">
+                        <!-- Thumbnail Terry-->
+                        <figure class="thumbnail-terry thumbnail-terry-modern">
+                            <a href="food.html">
+                                <img width="480" height="360" src="/images/steak-house.jpg" alt="Restaurantes Playa del Carmen">
+                            </a>
+                            <figcaption class="text-left">
+                                <div class="figcaption-caption">
+                                    <h4 class="thumbnail-terry-title text-spacing-40 text-uppercase">Hospedaje</h4>
+                                    <p class="thumbnail-terry-desc text-white-07 offset-top-5">
+                                        Disfruta de una gran gama gastronómica
+                                    </p>
+                                </div>
+                                <div class="thumbnail-terry-btn-wrap text-md-right offset-top-10 offset-md-top-0">
+                                    <a href="food.html" class="btn btn-thumbnail-terry btn-rect btn-icon btn-icon-right btn-primary">
+                                        <span class="icon icon-xs mdi mdi-arrow-right veil reveal-sm-inline-block"></span> Más
+                                    </a>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="cell-xs-6 cell-sm-6 cell-lg-2 offset-top-40 offset-xs-top-0 inset-left-15 inset-right-15 inset-md-left-0 inset-md-right-0">
+                        <!-- Thumbnail Terry-->
+                        <figure class="thumbnail-terry thumbnail-terry-modern">
+                            <a href="atracciones-tours.html">
+                                <img width="480" height="360" src="/images/atracciones.jpg" alt="Atracciones Playa del Carmen">
+                            </a>
+                            <figcaption class="text-left">
+                                <div class="figcaption-caption">
+                                    <h4 class="thumbnail-terry-title text-spacing-40 text-uppercase">Lugares Publicos</h4>
+                                    <p class="thumbnail-terry-desc text-white-07 offset-top-5">
+                                        Tours, parques tematicos y más.
+                                    </p>
+                                </div>
+                                <div class="thumbnail-terry-btn-wrap text-md-right offset-top-10 offset-md-top-0">
+                                    <a href="atracciones-tours.html" class="btn btn-thumbnail-terry btn-rect btn-icon btn-icon-right btn-primary">
+                                        <span class="icon icon-xs mdi mdi-arrow-right veil reveal-sm-inline-block"></span>Más
+                                    </a>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="cell-xs-6 cell-sm-6 cell-lg-2 offset-top-40 offset-md-top-0 inset-left-15 inset-right-15 inset-md-left-0 inset-md-right-0">
+                        <!-- Thumbnail Terry-->
+                        <figure class="thumbnail-terry thumbnail-terry-modern">
+                            <a href="beach-clubs.html">
+                                <img width="480" height="360" src="/images/beach-club.jpg" alt="Playa del Carmen Beach Club"></a>
+                            <figcaption class="text-left">
+                                <div class="figcaption-caption">
+                                    <h4 class="thumbnail-terry-title text-spacing-40 text-uppercase">Servicios</h4>
+                                    <p class="thumbnail-terry-desc text-white-07 offset-top-5">Disfruta de un día inolvidable</p>
+                                </div>
+                                <div class="thumbnail-terry-btn-wrap text-md-right offset-top-10 offset-md-top-0">
+                                    <a href="beach-clubs.html" class="btn btn-thumbnail-terry btn-rect btn-icon btn-icon-right btn-primary">
+                                        <span class="icon icon-xs mdi mdi-arrow-right veil reveal-sm-inline-block"></span>Más</a>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="cell-xs-6 cell-sm-6 cell-lg-2 offset-top-40 offset-md-top-0 inset-left-15 inset-right-15 inset-md-left-0 inset-md-right-0">
+                        <!-- Thumbnail Terry-->
+                        <figure class="thumbnail-terry thumbnail-terry-modern">
+                            <a href="hoteles.html"><img width="480" height="360" src="/images/hoteles.jpg" alt=""></a>
+                            <figcaption class="text-left">
+                                <div class="figcaption-caption">
+                                    <h4 class="thumbnail-terry-title text-spacing-40 text-uppercase">Tiendas</h4>
+                                    <p class="thumbnail-terry-desc text-white-07 offset-top-5">Opciones de hospedaje </p>
+                                </div>
+                                <div class="thumbnail-terry-btn-wrap text-md-right offset-top-10 offset-md-top-0">
+                                    <a href="hoteles.html" class="btn btn-thumbnail-terry btn-rect btn-icon btn-icon-right btn-primary">
+                                        <span class="icon icon-xs mdi mdi-arrow-right veil reveal-sm-inline-block"></span>Más</a>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                </div>
+            </section>
+    		<?php
+    		$categories = ob_get_contents();
+    		ob_end_clean();
+    		return $categories;
+    }
+    
+    public function getEventsIndex()
+    {
+    		ob_start();
+    		?>
+    		<section class="section-80 section-md-120">
+                <div class="inset-md-left-35 inset-xl-left-125 inset-md-right-35 inset-xl-right-125">
+                    <div class="shell-wide shell-wide-custom">
+                        <hr class="divider bg-bermuda">
+                        <div class="offset-top-20">
+                            <h1>Eventos en Playa del Carmen</h1>
+                        </div>
+                        <div class="range range-xs-center range-lg-left text-left offset-top-35 offset-md-top-60">
+                            <div class="cell-md-6">
+                                <!-- Unit-->
+                                <div class="range range-xs-center range-lg-left">
+                                    <div class="cell-sm-5 cell-md-10 cell-lg-5">
+                                        <img src="/images/golf-para-todos-index-event.jpg" width="320" height="442" alt="Golf para Todos Mayakoba" class="img-responsive">
+                                    </div>
+                                    <div class="cell-sm-6 cell-md-10 cell-lg-6 offset-md-top-30 offset-lg-top-0">
+                                        <!-- List Inline-->
+                                        <ul class="list-inline list-inline-20">
+                                            <li>
+                                                <span class="icon icon-normal icon-sm mdi mdi-calendar text-bermuda text-middle"></span>
+                                                <span class="text-middle inset-left-10">Junio 11</span>
+                                            </li>
+                                            <li><span class="icon icon-normal icon-sm mdi mdi-clock text-bermuda text-middle"></span>
+                                                <span class="text-middle inset-left-10">1:00pm</span>
+                                            </li>
+                                        </ul>
+                                        <div class="offset-top-25">
+                                            <h5><a href="eventos-golf-para-todos.html">Golf Para Todos</a></h5>
+                                        </div>
+                                        <div class="offset-top-25">
+                                            <p>Golf PARa Todos es un programa comunitario y educativo del OHL Classic at Mayakoba para toda la familia. Esta lleno de actividades divertidas que fomentan la participacion activa en el golf.
+                                                <span class="veil-md reveal-lg-inline">
+                                                     Facilita la integración del deporte en la comunidad al crear un vínculo con 
+                                                    el evnto del PGA TOUR en México.
+                                                </span>
+                                            </p>
+                                        </div>
+
+                                        <div class="offset-top-25">
+                                            <a href="eventos-golf-para-todos.html" class="btn btn-width-175 btn-primary-outline">Más Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cell-md-6 offset-top-50 offset-md-top-0">
+                                <!-- Unit-->
+                                <div class="range range-xs-center range-lg-left">
+                                    <div class="cell-sm-5 cell-md-10 cell-lg-5">
+                                        <img src="/images/corona-sunsets-index-event.jpg" width="320" height="442" alt="Corona sunsets Tulum" class="img-responsive">
+                                    </div>
+                                    <div class="cell-sm-6 cell-md-10 cell-lg-6 offset-md-top-30 offset-lg-top-0">
+                                        <!-- List Inline-->
+                                        <ul class="list-inline list-inline-20">
+                                            <li>
+                                                <span class="icon icon-normal icon-sm mdi mdi-calendar text-bermuda text-middle"></span>
+                                                <span class="text-middle inset-left-10">Junio, 17</span>
+                                            </li>
+                                            <li><span class="icon icon-normal icon-sm mdi mdi-clock text-bermuda text-middle"></span>
+                                                <span class="text-middle inset-left-10">8:00pm</span>
+                                            </li>
+                                        </ul>
+                                        <div class="offset-top-25">
+                                            <h5>
+                                                <a href="eventos-corona-sunsets.html">Corona Sunsets</a>
+                                            </h5>
+                                        </div>
+                                        <div class="offset-top-25">
+                                            <p>En esta edición, Corona Sunsets, se convertirá en una experiencia desde la llegada al festival con transporte exclusivo para sus asistentes.
+                                                <span class="veil-md reveal-lg-inline">saliendo desde: Playa del Carmen 
+                                                    y Tulum para Corona Sunsets Tulum y desde: Nuevo Vallarta para 
+                                                    Corona Sunsets San Pancho.
+                                                </span>
+                                            </p>
+                                        </div>
+
+                                        <div class="offset-top-25">
+                                            <a href="eventos-corona-sunsets.html" class="btn btn-width-175 btn-primary-outline">Más Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="events.html" class="btn btn-width-200 btn-bermuda offset-top-35 offset-md-top-65">Ver Todos Los Eventos</a>
+                    </div>
+                </div>
+            </section>
+    		<?php
+    		$events = ob_get_contents();
+    		ob_end_clean();
+    		return $events;
+    }
+    
+    public function getBlogIndex()
+    {
+    		ob_get_contents();
+    		?>
+    		<section class="section-80 section-md-120 bg-selago">
+                <div class="inset-md-left-35 inset-xl-left-125 inset-md-right-35 inset-xl-right-125">
+                    <div class="shell-wide shell-wide-custom">
+                        <hr class="divider bg-bermuda">
+                        <div class="offset-top-20">
+                            <h3>Últimas Noticias</h3>
+                        </div>
+                        <div class="range range-xs-center range-lg-left text-left offset-top-35 offset-md-top-60">
+
+
+                            <div class="cell-sm-10 cell-md-6 cell-lg-4 cell-xl-5">
+                                <!-- Post Box-->
+                                <div class="post-box shadow-drop post-box-max-width-none reveal-block">
+                                    <div class="post-box-img-wrap">
+                                        <a href="cooking-school-lazcano.html" class="thumbnail-robben">
+                                            <span class="thumbnail-robben-img-wrap post-box-top-radius">
+                                                <img src="/images/cocina-pueblito.jpg" width="320" height="442" alt="Cooking School Mayakoba" class="img-responsive center-block post-box-top-radius">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="post-box-caption post-box-bottom-radius bg-white">
+                                        <a href="cooking-school-lazcano.html" class="label-custom-wrap reveal-inline-block">
+                                            <span class="label-custom label-bermuda">Where To Go Playa</span>
+                                        </a>
+                                        <h5 class="offset-top-15">
+                                            <a href="cooking-school-lazcano.html">
+                                            De chismosos en la cocina de Mayakoba - Cooking School
+                                            </a>
+                                        </h5>
+                                        <p class="offset-top-20">
+                                            Hemos ignorado una máxima popular de las cocinas mexicanas que dice que “no se puede echar chisme mientras se preparan los tamales”. Aquí sí se puede pese a que no preparamos tamales. Y es que la clase de comida prehispánica que imparte la chef Mónica Lazcano se presta para que ...
+                                        </p>
+                                        <!-- List Inline-->
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="cell-sm-10 cell-md-6 cell-lg-4 cell-xl-3 offset-top-30 offset-md-top-5">
+                                <div class="post-box shadow-drop post-box-max-width-none reveal-block">
+
+                                    <div class="post-box-img-wrap">
+                                        <a href="bronco-en-playa-del-carmen.html" class="thumbnail-robben">
+                                            <span class="thumbnail-robben-img-wrap post-box-top-radius">
+                                                <img src="/images/bronco-en-playa.jpg" width="320" height="442" alt="Where to go playa" class="img-responsive center-block post-box-top-radius">
+                                            </span>
+                                        </a>
+                                    </div>
+
+                                    <div class="post-box-caption post-box-top-radius post-box-bottom-radius bg-white">
+                                        <a href="bronco-en-playa-del-carmen.html" class="label-custom-wrap reveal-inline-block">
+                                            <span class="label-custom label-bermuda">Where To Go Playa</span>
+                                        </a>
+                                        <h5 class="offset-top-15">
+                                            <a href="bronco-en-playa-del-carmen.html">
+                                            Bronco, un sonido que no pasa de moda.
+                                            </a>
+                                        </h5>
+                                        <p class="offset-top-20">Contentos por saber que están a escasos minutos de presenciar el concierto de Bronco, fans del grupo se preguntan y apuestan entre sí en torno a la canción que abrirá la presentación.
+                                        </p>
+                                        <!-- List Inline-->
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="cell-sm-10 cell-md-6 cell-lg-4 cell-xl-3 offset-top-30 offset-md-top-5">
+                                <div class="post-box shadow-drop post-box-max-width-none reveal-block">
+
+                                    <div class="post-box-img-wrap">
+                                        <a href="cooking-school-reposteria.html" class="thumbnail-robben">
+                                            <span class="thumbnail-robben-img-wrap post-box-top-radius">
+                                                <img src="/images/cocina-pueblito-karen.jpg" width="320" height="442" alt="Where to go playa" class="img-responsive center-block post-box-top-radius">
+                                            </span>
+                                        </a>
+                                    </div>
+
+                                    <div class="post-box-caption post-box-top-radius post-box-bottom-radius bg-white">
+                                        <a href="cooking-school-reposteria.html" class="label-custom-wrap reveal-inline-block">
+                                            <span class="label-custom label-bermuda">Where To Go Playa</span>
+                                        </a>
+                                        <h5 class="offset-top-15">
+                                            <a href="cooking-school-reposteria.html">
+                                            La repostería, un sorpresivo aprendizaje
+                                            </a>
+                                        </h5>
+                                        <p class="offset-top-20">Contentos por saber que están a escasos minutos de presenciar el concierto de Bronco, fans del grupo se preguntan y apuestan entre sí en torno a la canción que abrirá la presentación.
+                                        </p>
+                                        <!-- List Inline-->
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <a href="noticias.html" class="btn btn-width-200 btn-primary offset-top-35 offset-md-top-65">Ver Todas las noticias</a> </div>
+                </div>
+            </section>
+    		<?php
+    		$blog = ob_get_contents();
+    		ob_end_clean();
+    		return $blog;
     }
     
 	/**
