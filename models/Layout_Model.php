@@ -700,8 +700,10 @@ class Layout_Model
 					LEFT JOIN seo S ON S.company_id = C.company_id
 					LEFT JOIN categories cat ON cat.category_id = C.category
 					LEFT JOIN company_logo p ON C.company_id = p.company_id
-					WHERE (C.longitude IS NOT NULL AND C.longitude != 0) AND
-					(C.latitude IS NOT NULL AND C.latitude != 0)';
+					WHERE ((C.longitude IS NOT NULL AND C.longitude != 0) AND
+					(C.latitude IS NOT NULL AND C.latitude != 0))
+					AND C.published = 1 AND C.closed = 0
+					';
 				
 			return $this->db->getArray($query);
 		}

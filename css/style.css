@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
 * Template Style
-*
+* http://static.livedemo00.template-help.com/wt_61211/
 * [Table of contents]
 *   1 Bootstrap Framework
 *     1.1  Normalize
@@ -10816,7 +10816,7 @@ dl {
 }
 
 .page .list-background-minsk li a.bg-primary:hover {
-  background: #442a74;
+  background: #79d5ca;
   text-decoration: none;
 }
 
@@ -31769,7 +31769,7 @@ html:not(.lt-ie10) .not-animated {
 .rd-navbar-fullwidth .rd-navbar-dropdown > li > a {
   display: block;
   padding: 2px 20px;
-  color: #764ebe;
+  color: #137fde;
   background: transparent;
 }
 
@@ -31942,7 +31942,7 @@ html:not(.lt-ie10) .not-animated {
   text-align: left;
   visibility: hidden;
   opacity: 0;
-  border-top: 3px solid #764ebe;
+  border-top: 3px solid #79d5ca;
   box-shadow: 0 5px 23px 5px rgba(0, 0, 0, 0.05);
 }
 
@@ -33651,7 +33651,7 @@ ul ul, ul ol, ol ul, ol ol {
     height: 510px;
   }
   .swiper-container-wrap .swiper-aside-right .list li, .swiper-container-wrap .swiper-aside-right .list .box-sm {
-    height: 102px;
+    height: 85px;
   }
   .swiper-container-wrap .swiper-aside-right .box-sm {
     padding: 15px;
@@ -37013,3 +37013,33 @@ a.pswp__share--download:hover {
 .muted-link:hover {
 	text-decoration: none;
 }
+
+/***** Map ******/
+
+.map-info-item {
+ }
+ 
+  
+ .map-info-item .map-info-image {
+ 	float: left;
+ }
+ 
+ .map-info-item .map-info-image img {
+ 	width: 140px;
+ }
+ 
+ .map-info-item .map-info {
+ 	width: 300px;
+ 	float: left;
+ 	padding-left: 20px;
+ }
+ 
+  .map-info-item .map-info h4{
+ 	font-size: 14px;
+ 	font-weight: bold;
+ 	
+ }
+ 
+  .map-info-item .map-info p{
+ 	font-size: 14px;
+ }

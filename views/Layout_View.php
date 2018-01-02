@@ -258,16 +258,16 @@ class Layout_View
 							<div class="left-side">
 								<!-- Contact Info-->
 								<address class="contact-info text-left">
-									<div class="reveal-inline-block">
-										<a href="/" class="unit unit-lg-middle unit-horizontal unit-spacing-xxs">
-											<span class="unit-left">
-												<span class="icon icon-sm icon-primary icon-circle fa fa-flag text-bermuda"></span>
-											</span>
-											<span class="unit-body">		
-												<span class="text-gray-lighter">English</span>
-											</span>
-										</a>
-									</div>
+<!-- 									<div class="reveal-inline-block"> -->
+<!-- 										<a href="/" class="unit unit-lg-middle unit-horizontal unit-spacing-xxs"> -->
+<!-- 											<span class="unit-left"> -->
+<!-- 												<span class="icon icon-sm icon-primary icon-circle fa fa-flag text-bermuda"></span> -->
+<!-- 											</span> -->
+<!-- 											<span class="unit-body">		 -->
+<!-- 												<span class="text-gray-lighter">English</span> -->
+<!-- 											</span> -->
+<!-- 										</a> -->
+<!-- 									</div> -->
 									<div class="reveal-inline-block">
 										<a href="/" class="unit unit-lg-middle unit-horizontal unit-spacing-xxs">
 											<span class="unit-left">
@@ -431,7 +431,7 @@ class Layout_View
 		<!-- RD Navbar Nav-->
 		<ul class="rd-navbar-nav">
 			<li class="active"><a href="/">Inicio</a></li>
-			<li><a href="entertainment.html">¿D&oacute;nde ir?</a>
+			<li><a href="#">¿D&oacute;nde ir?</a>
 				<!-- RD Navbar Dropdown-->
 				<ul class="rd-navbar-dropdown">
 					<?php
@@ -627,12 +627,36 @@ class Layout_View
                   			</div>
                         </div>
                     </div>
+                    <?php 
+//                     var_dump($this->data);
+                    ?>
                     <!-- RD Google Map-->
                     <div data-zoom="15" data-x="-87.071270" data-y="20.647151" data-styles="[{&quot;featureType&quot;:&quot;landscape.natural&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;color&quot;:&quot;#e0efef&quot;}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;hue&quot;:&quot;#1900ff&quot;},{&quot;color&quot;:&quot;#c0e8e8&quot;}]},{&quot;featureType&quot;:&quot;road&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;lightness&quot;:100},{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;road&quot;,&quot;elementType&quot;:&quot;labels&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;transit.line&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;lightness&quot;:700}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#7dcdcd&quot;}]}]" class="rd-google-map rd-google-map__model">
                         <ul class="map_locations">
-                            <li data-y="40.643180" data-x="-73.9874068">
-                                <p>Playa Del carmen, Quintana Roo, México</p>
-                            </li>
+                        		<?php 
+			                	foreach ($this->data['companies_map'] as $company)
+			                	{
+			                		?>
+			                	<li data-x="<?php echo $company['longitude']; ?>" data-y="<?php echo $company['latitude']; ?>">
+			                		<div class="map-info-item">
+			                			<div class="map-info-image">
+			                				<a href="/company/<?php echo $company['category'].'/'.Tools::slugify($company['category_name']).'/'.$company['company_id'].'/'.Tools::slugify($company['name']).'/'; ?>">
+										    	<img src="<?php echo $this->data['appInfo']['url']; ?>/media/companies/logo/<?php echo $company['logo']; ?>">
+									    </a>
+			                			</div>
+			                			<div class="map-info">
+			                				<a href="/company/<?php echo $company['category'].'/'.Tools::slugify($company['category_name']).'/'.$company['company_id'].'/'.Tools::slugify($company['name']).'/'; ?>">
+			                					<h4><?php echo $company['name']; ?></h4>
+			                				</a>
+			                				<a href="/company/<?php echo $company['category'].'/'.Tools::slugify($company['category_name']).'/'.$company['company_id'].'/'.Tools::slugify($company['name']).'/'; ?>">
+			                					<?php echo trim(preg_replace('/\s+/', ' ',str_replace(array("'"), "",$company['seo_description']))); ?>
+			                				</a>
+			                			</div>
+			                		</div>
+			                    </li>
+			                		<?php
+			                	}
+			                	?>
                         </ul>
                     </div>
                 </div>
@@ -739,17 +763,17 @@ class Layout_View
                             </div>
                             <div class="cell-sm-10 cell-lg-7 cell-xl-8 offset-top-60 offset-lg-top-0">
                                 <div class="range range-xs-center range-sm-left range-md-center inset-xl-left-70">
-                                    <div class="cell-sm-6 cell-md-4 offset-top-60 offset-sm-top-0">
+                                    <div class="cell-sm-4 cell-md-4 offset-top-60 offset-sm-top-0">
                                         <span class="icon icon-lg icon-circle icon-white shadow-drop mdi mdi-music-note text-primary"></span>
                                         <div class="offset-top-25 offset-md-top-35 inset-xl-left-15 inset-xl-right-15">
                                             <h6>Events</h6>
                                             <hr class="divider divider-xs bg-bermuda offset-top-15">
                                             <p class="offset-top-15 offset-md-top-25">
-                                            	<a class="muted-link"> Diviertete en los más bellos paruqes tematicos, disfruta de las maravillas de la Riviera Maya con inumerables tours.</a>
+                                            	<a class="muted-link"> Diviertete en los más bellos parques tem&aacute;ticos, disfruta de las maravillas de la Riviera Maya con inumerables tours.</a>
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="cell-sm-6 cell-md-4">
+                                    <div class="cell-sm-4 cell-md-4">
                                         <span class="icon icon-lg icon-circle icon-white shadow-drop mdi mdi-comment text-primary"></span>
                                         <div class="offset-top-25 offset-md-top-35 inset-xl-left-15 inset-xl-right-15">
                                             <h6>Blog</h6>
@@ -757,7 +781,7 @@ class Layout_View
                                             <p class="offset-top-15 offset-md-top-25"><a class="muted-link">Disfruta de la amplia varideda gastronómica en Playa del Carmen</a></p>
                                         </div>
                                     </div>
-                                    <div class="cell-sm-6 cell-md-4 offset-top-60 offset-sm-top-0">
+                                    <div class="cell-sm-4 cell-md-4 offset-top-60 offset-sm-top-0">
                                         <span class="icon icon-lg icon-circle icon-white shadow-drop mdi mdi-email text-primary"></span>
                                         <div class="offset-top-25 offset-md-top-35 inset-xl-left-15 inset-xl-right-15">
                                             <h6>Contacto</h6>
@@ -809,45 +833,10 @@ class Layout_View
 	            </div>
 	        </section>-->
 	        <!-- END Clients choose us! -->
-	        
-	        <!-- RD Google Map -->
-	        <!-- <section>
-	            <div class="rd-google-map">
-	                <div id="google-map" class="rd-google-map__model" data-zoom="16" data-x="-87.069887"
-	                     data-y="20.631863"></div>
-	                <ul class="rd-google-map__locations">
-	                	<?php 
-	                	foreach ($this->data['companies_map'] as $company)
-	                	{
-	                		?>
-	                	<li data-x="<?php echo $company['longitude']; ?>" data-y="<?php echo $company['latitude']; ?>">
-	                		<div class="map-info-item">
-	                			<div class="map-info-image">
-	                				<a href="/company/<?php echo $company['category'].'/'.Tools::slugify($company['category_name']).'/'.$company['company_id'].'/'.Tools::slugify($company['name']).'/'; ?>">
-								    	<img alt="<?php echo $name; ?>" src="/img-up/companies_pictures/logo/<?php echo $company['logo']; ?>">
-								    </a>
-	                			</div>
-	                			<div class="map-info">
-	                				<a href="/company/<?php echo $company['category'].'/'.Tools::slugify($company['category_name']).'/'.$company['company_id'].'/'.Tools::slugify($company['name']).'/'; ?>">
-	                					<h4><?php echo $company['name']; ?></h4>
-	                				</a>
-	                				<a href="/company/<?php echo $company['category'].'/'.Tools::slugify($company['category_name']).'/'.$company['company_id'].'/'.Tools::slugify($company['name']).'/'; ?>">
-	                					<?php echo trim(preg_replace('/\s+/', ' ',str_replace(array("'"), "",$company['seo_description']))); ?>
-	                				</a>
-	                			</div>
-	                		</div>
-	                    </li>
-	                		<?php
-	                	}
-	                	?>
-	                </ul>
-	            </div>
-	        </section> -->
-	        <!-- END RD Google Map -->
 	        <?php 
 	        echo self::getMainCategoriesIndex();
-	        echo self::getEventsIndex();
-	        echo self::getBlogIndex();
+// 	        echo self::getEventsIndex();
+// 	        echo self::getBlogIndex();
 	        echo self::getIndexMap();
 	        ?>
 		</main>
