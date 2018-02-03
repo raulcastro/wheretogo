@@ -11000,12 +11000,13 @@ address {
 }
 
 .page .text-bermuda {
-  color: #137fdc;
+  color: #07b0e8;
 }
 
 .page a.text-bermuda:hover,
 .page a.text-bermuda:focus {
-  color: #07b0e8;
+  color: #fff;
+    text-decoration: none;
 }
 
 .page .text-minsk {
