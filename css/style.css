@@ -11000,7 +11000,7 @@ address {
 }
 
 .page .text-bermuda {
-  color: #79d5ca;
+  color: #137fdc;
 }
 
 .page a.text-bermuda:hover,
@@ -31619,7 +31619,7 @@ html:not(.lt-ie10) .not-animated {
   width: 38px;
   height: 4px;
   margin-top: -4px;
-  background: #79d5ca;
+  background:;
   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
   transform: translate(-50%, -50%) rotate(-45deg);
   opacity: 0;
@@ -34429,7 +34429,7 @@ ul ul, ul ol, ol ul, ol ol {
   background: #1374d7;
   border-radius: 50%;
   position: fixed;
-  right: 15px;
+  left: 15px;
   bottom: 15px;
   overflow: hidden;
   text-align: center;
@@ -34441,8 +34441,8 @@ ul ul, ul ol, ol ul, ol ol {
 }
 
 .ui-to-top:hover {
-  color: #fff;
-  background: #5e3a9f;
+  color: #1374d7;
+  background: #fff;
   text-decoration: none;
 }
 
